@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ContinuumTUBE — boutique guitar rig</title>
+<meta name="description" content="ContinuumTUBE: a free boutique guitar rig for Windows. Five guitars, four tube amps with their own cabinets, twenty-one pedals and fifteen song-inspired presets. VST3 plugin and standalone app.">
+<meta property="og:title" content="ContinuumTUBE — boutique guitar rig">
+<meta property="og:description" content="Five guitars, four tube amps, twenty-one pedals. Free VST3 + standalone for Windows.">
+<meta property="og:image" content="media/shots/rig-gravity.png">
+<link rel="icon" href="media/guitars/blk1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #f1e6cf;
+    --muted: #b9a888;
+    --brass: #d4a55a;
+    --brass-hi: #f6dfa3;
+    --tolex: #16120e;
+    --panel: #1f1914;
+    --line: rgba(212, 165, 90, 0.22);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font: 16px/1.6 'Work Sans', system-ui, sans-serif;
+    background:
+      radial-gradient(900px 500px at 50% -10%, rgba(212,165,90,0.14), transparent 70%),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 5px),
+      var(--tolex);
+  }
+  a { color: var(--brass-hi); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  /* Piping dorato come sui mobili degli amplificatori */
+  .piping { height: 3px; background: linear-gradient(90deg, transparent, var(--brass) 20%, var(--brass-hi) 50%, var(--brass) 80%, transparent); opacity: .7; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+  .logo { font: italic 800 26px 'Playfair Display', Georgia, serif; text-decoration: none;
+          background: linear-gradient(180deg, var(--brass-hi), #a8782c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  nav .links { display: flex; gap: 22px; font-size: 14px; }
+  nav .links a { color: var(--muted); text-decoration: none; }
+  nav .links a:hover { color: var(--ink); }
+
+  .hero { text-align: center; padding: 34px 0 56px; }
+  .hero h1 { font: italic 800 clamp(48px, 9vw, 104px)/1 'Playfair Display', Georgia, serif; margin: 0;
+             background: linear-gradient(180deg, var(--brass-hi) 10%, #b8873a 95%); -webkit-background-clip: text; background-clip: text; color: transparent;
+             filter: drop-shadow(0 4px 0 rgba(0,0,0,.55)); }
+  .hero p.lead { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 680px; margin: 18px auto 30px; }
+  .video { position: relative; max-width: 960px; margin: 0 auto; border-radius: 14px; overflow: hidden;
+           border: 2px solid #000; box-shadow: 0 0 0 1px var(--line), 0 30px 80px rgba(0,0,0,.65); background: #000; }
+  .video video { display: block; width: 100%; height: auto; }
+  .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+  .btn { display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+  .btn-brass { background: linear-gradient(180deg, var(--brass-hi), var(--brass)); color: #241708; box-shadow: 0 10px 30px rgba(212,165,90,.25); }
+  .btn-line { border: 1px solid var(--line); color: var(--ink); }
+  .btn:hover { filter: brightness(1.08); }
+  .small { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+  section { padding: 70px 0; }
+  h2 { font: italic 700 clamp(30px, 4vw, 42px) 'Playfair Display', Georgia, serif; color: var(--brass-hi); margin: 0 0 8px; text-align: center; }
+  .sub { text-align: center; color: var(--muted); margin: 0 auto 40px; max-width: 640px; }
+
+  .chain { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-weight: 600; letter-spacing: .04em; }
+  .chain span { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); }
+  .chain i { align-self: center; color: var(--brass); font-style: normal; }
+
+  .guitar { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .guitar:last-child { border-bottom: 0; }
+  .guitar img { width: 100%; filter: drop-shadow(0 18px 24px rgba(0,0,0,.6)); }
+  .guitar h3 { font: italic 700 30px 'Playfair Display', Georgia, serif; margin: 0 0 4px; }
+  .guitar p { margin: 0 0 8px; color: var(--muted); }
+  .tag { display: inline-block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--brass); }
+
+  .amps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .amp { background: linear-gradient(180deg, #241d17, #17120e); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .amp h3 { font: italic 700 24px 'Playfair Display', Georgia, serif; margin: 0; color: var(--ink); }
+  .amp .cab { font-size: 13px; color: var(--brass); margin-bottom: 10px; }
+  .amp p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  .shot { border-radius: 12px; overflow: hidden; border: 1px solid #000; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+  .shot img { display: block; width: 100%; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+  .two figcaption { font-size: 14px; color: var(--muted); padding: 10px 2px 0; }
+
+  .pedals { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 26px; }
+  .pedals span { font-size: 14px; padding: 6px 12px; border-radius: 6px; background: var(--panel); border: 1px solid var(--line); }
+
+  .presets { columns: 3; column-gap: 28px; max-width: 900px; margin: 0 auto; }
+  .presets div { break-inside: avoid; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  .presets b { display: block; font-weight: 600; }
+  .presets small { color: var(--muted); }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: step; }
+  .step { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 34px; height: 34px;
+                  border-radius: 50%; background: linear-gradient(180deg, var(--brass-hi), var(--brass)); color: #241708; font-weight: 700; margin-bottom: 10px; }
+  .step h3 { margin: 0 0 6px; font-size: 18px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+  code { background: #0d0a08; padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+
+  footer { padding: 40px 0 60px; text-align: center; font-size: 13px; color: var(--muted); }
+  footer p { max-width: 760px; margin: 8px auto; }
+
+  @media (max-width: 860px) {
+    .guitar { grid-template-columns: 1fr; text-align: center; }
+    .amps { grid-template-columns: 1fr 1fr; }
+    .two, .steps { grid-template-columns: 1fr; }
+    .presets { columns: 1; }
+    nav .links { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="piping"></div>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#">ContinuumTUBE</a>
+    <div class="links">
+      <a href="#guitars">Guitars</a><a href="#amps">Amps</a><a href="#pedals">Pedals</a><a href="#presets">Presets</a><a href="#download">Download</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>ContinuumTUBE</h1>
+    <p class="lead">A boutique guitar rig for Windows. Five guitars, four tube amps with their own cabinets,
+      twenty-one pedals and fifteen song-inspired presets — as a VST3 plugin and a standalone app.</p>
+    <div class="video">
+      <video src="media/continuumtube.webm" poster="media/shots/rig-gravity.png" controls autoplay muted loop playsinline></video>
+    </div>
+    <div class="cta">
+      <a class="btn btn-brass" href="https://github.com/Alex-Stark-industries/ContinuumTUBE/releases/latest">Download for Windows — free</a>
+      <a class="btn btn-line" href="https://github.com/Alex-Stark-industries/ContinuumTUBE">View on GitHub</a>
+    </div>
+    <p class="small">Windows 10 / 11 · 64-bit · VST3 + Standalone · works offline, no account</p>
+  </header>
+</div>
+
+<div class="piping"></div>
+
+<section>
+  <div class="wrap">
+    <h2>One rig, one window</h2>
+    <p class="sub">Drag anything from the library onto the rig, reorder pedals by dragging them onto each other, save the result as your own preset.</p>
+    <div class="chain">
+      <span>Your guitar</span><i>→</i><span>Guitar model</span><i>→</i><span>6 pedals</span><i>→</i><span>Amp</span><i>→</i><span>Cabinet</span><i>→</i><span>4-slot FX loop</span><i>→</i><span>Out</span>
+    </div>
+    <div class="two">
+      <figure class="shot" style="margin:0"><img src="media/shots/rig-gravity.png" alt="ContinuumTUBE with the Gravity Butter Lead preset" loading="lazy"></figure>
+      <figure class="shot" style="margin:0"><img src="media/shots/guitar-view.png" alt="Large guitar view with pickup and selector buttons" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="guitars">
+  <div class="wrap">
+    <h2>Five guitars</h2>
+    <p class="sub">Pick a model and ContinuumTUBE reshapes the pickups of the guitar you're actually playing. Every one has switchable pickup sets and a working selector.</p>
+
+    <div class="guitar"><img src="media/guitars/signature.png" alt="Signature S illustration" loading="lazy">
+      <div><span class="tag">S-style · 5-way</span><h3>Signature S</h3><p>Sunburst, tortoise guard. Scooped, glassy and articulate.</p></div></div>
+    <div class="guitar"><img src="media/guitars/sky.png" alt="Sky S-Style illustration" loading="lazy">
+      <div><span class="tag">S-style · 5-way</span><h3>Sky S-Style</h3><p>Silver, maple neck. Round vintage mids, a softer top.</p></div></div>
+    <div class="guitar"><img src="media/guitars/blk1.png" alt="Black No. 1 S illustration" loading="lazy">
+      <div><span class="tag">S-style · 5-way</span><h3>Black No. 1 S</h3><p>Worn black relic, gold hardware. Fat, warm and thick.</p></div></div>
+    <div class="guitar"><img src="media/guitars/monterey.png" alt="Monterey S illustration" loading="lazy">
+      <div><span class="tag">S-style · 5-way</span><h3>Monterey S</h3><p>Hand-painted finish. Hotter pickups, a bright, barking attack.</p></div></div>
+    <div class="guitar"><img src="media/guitars/cherry.png" alt="Cherry '64 Semi illustration" loading="lazy">
+      <div><span class="tag">Semi-hollow · 3-way</span><h3>Cherry '64 Semi</h3><p>Twin humbuckers. Far more output, woody and round.</p></div></div>
+  </div>
+</section>
+
+<section id="amps">
+  <div class="wrap">
+    <h2>Four amps, four characters</h2>
+    <p class="sub">Each amp has its own way of breaking up and its own cabinet — switch amp and the cab follows.</p>
+    <div class="amps">
+      <div class="amp"><h3>Rock Two</h3><div class="cab">2x12</div><p>Huge, chimey clean, deep lows and forward mids. Warms up only when you push it.</p></div>
+      <div class="amp"><h3>Modern 100</h3><div class="cab">2x12</div><p>The overdrive channel: vocal mids, smooth top, long compressed sustain.</p></div>
+      <div class="amp"><h3>Junior 15</h3><div class="cab">1x12</div><p>A small combo that breaks up early — nasal, raw, light on bass.</p></div>
+      <div class="amp"><h3>Blackface Super</h3><div class="cab">4x10</div><p>Scooped mids, sparkling highs and lots of clean headroom.</p></div>
+    </div>
+    <div class="two">
+      <figure class="shot" style="margin:0"><img src="media/shots/rig-crossroads.png" alt="Semi-hollow into the Modern 100" loading="lazy"><figcaption>Semi-hollow into the Modern 100.</figcaption></figure>
+      <figure class="shot" style="margin:0"><img src="media/shots/rig-monterey.png" alt="Monterey S into the Blackface Super" loading="lazy"><figcaption>Monterey S into the Blackface Super.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="pedals">
+  <div class="wrap">
+    <h2>Twenty-one pedals</h2>
+    <p class="sub">Six slots before the amp, four in the FX loop after the cabinet. Every pedal has its own face, knobs and footswitch.</p>
+    <div class="pedals">
+      <span>Green Screamer</span><span>Centaur Drive</span><span>Crown Drive</span><span>Twin Drive</span><span>Breaker Drive</span><span>Rhino Drive</span>
+      <span>Blues Drive K</span><span>Blue Boost</span><span>Pickle Fuzz</span><span>Studio Comp</span><span>XW Wah</span><span>Envelope Q</span>
+      <span>Sub Octave</span><span>Rotary Vibe</span><span>Script Phaser</span><span>Vintage Chorus</span><span>Opto Tremolo</span>
+      <span>Aqua Delay</span><span>Tape Echo</span><span>Spring Reverb</span><span>Stone Verb</span>
+    </div>
+  </div>
+</section>
+
+<section id="presets">
+  <div class="wrap">
+    <h2>Fifteen song-inspired presets</h2>
+    <p class="sub">Starting points built around the tones of specific songs and eras. Load one, then change guitar and amp to make it yours.</p>
+    <div class="presets">
+      <div><b>Gravity Butter Lead</b><small>Black No. 1 S · Rock Two</small></div>
+      <div><b>Slow Dancing Room</b><small>Black No. 1 S · Rock Two</small></div>
+      <div><b>Heart of Life Clean</b><small>Black No. 1 S · Rock Two</small></div>
+      <div><b>Edge of Desire Ambient</b><small>Black No. 1 S · Rock Two</small></div>
+      <div><b>Waiting World Clean</b><small>Signature S · Rock Two</small></div>
+      <div><b>Belief Groove</b><small>Signature S · Rock Two</small></div>
+      <div><b>Vultures Quack</b><small>Signature S · Rock Two</small></div>
+      <div><b>Covered Rain Blues</b><small>Black No. 1 S · Blackface Super</small></div>
+      <div><b>Bold Love Monterey</b><small>Monterey S · Blackface Super</small></div>
+      <div><b>Wild Blue Sky</b><small>Sky S-Style · Modern 100</small></div>
+      <div><b>Last Train Chorus</b><small>Sky S-Style · Modern 100</small></div>
+      <div><b>Shouldn't Matter Lead</b><small>Sky S-Style · Modern 100</small></div>
+      <div><b>Crossroads Shuffle 335</b><small>Cherry '64 Semi · Modern 100</small></div>
+      <div><b>No Such Thing Junior</b><small>Signature S · Junior 15</small></div>
+      <div><b>Why Georgia Junior</b><small>Signature S · Junior 15</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <h2>Get started</h2>
+    <p class="sub">Free, offline, no account. One zip with both the plugin and the standalone app.</p>
+    <div class="steps">
+      <div class="step"><h3>Download</h3><p>Get <code>ContinuumTUBE-1.0.0-Windows.zip</code> from the <a href="https://github.com/Alex-Stark-industries/ContinuumTUBE/releases/latest">latest release</a> and unzip it.</p></div>
+      <div class="step"><h3>Play standalone</h3><p>Run <code>ContinuumTUBE.exe</code>, open <b>Options → Audio/MIDI Settings</b> and pick your interface. Choose <b>Windows Audio (Low Latency Mode)</b> for the lowest latency.</p></div>
+      <div class="step"><h3>Or in your DAW</h3><p>Copy <code>ContinuumTUBE.vst3</code> to <code>C:\Program Files\Common Files\VST3</code> and rescan plugins.</p></div>
+    </div>
+    <div class="cta"><a class="btn btn-brass" href="https://github.com/Alex-Stark-industries/ContinuumTUBE/releases/latest">Download for Windows — free</a>
+      <a class="btn btn-line" href="https://github.com/Alex-Stark-industries/ContinuumTUBE/blob/main/MANUAL.md">Read the manual</a></div>
+    <p class="small" style="text-align:center">The app isn't code-signed: if Windows shows "Windows protected your PC", click <b>More info → Run anyway</b>.</p>
+  </div>
+</section>
+
+<div class="piping"></div>
+<footer class="wrap">
+  <p><b>ContinuumTUBE</b> is free to use · <a href="https://github.com/Alex-Stark-industries/ContinuumTUBE/blob/main/LICENSE.md">License</a> · <a href="https://github.com/Alex-Stark-industries/ContinuumTUBE/blob/main/NOTICES.md">Notices</a></p>
+  <p>An independent project, not affiliated with or endorsed by any artist or by any guitar, amplifier or pedal maker. All models, names and illustrations are original. VST is a registered trademark of Steinberg Media Technologies GmbH.</p>
+</footer>
+</body>
+</html>
