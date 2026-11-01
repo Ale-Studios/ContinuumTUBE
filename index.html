@@ -5,9 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ContinuumTUBE — boutique guitar rig</title>
 <meta name="description" content="ContinuumTUBE: a free boutique guitar rig for Windows. Five guitars, four tube amps with their own cabinets, twenty-one pedals and fifteen song-inspired presets. VST3 plugin and standalone app.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alex-stark-industries.github.io/ContinuumTUBE/">
 <meta property="og:title" content="ContinuumTUBE — boutique guitar rig">
 <meta property="og:description" content="Five guitars, four tube amps, twenty-one pedals. Free VST3 + standalone for Windows.">
-<meta property="og:image" content="media/shots/rig-gravity.png">
+<meta property="og:image" content="https://alex-stark-industries.github.io/ContinuumTUBE/media/shots/rig-gravity.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="858">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alex-stark-industries.github.io/ContinuumTUBE/media/shots/rig-gravity.png">
 <link rel="icon" href="media/guitars/blk1.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,15 +75,27 @@
   .chain span { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); }
   .chain i { align-self: center; color: var(--brass); font-style: normal; }
 
-  .guitar { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .guitar:last-child { border-bottom: 0; }
-  .guitar img { width: 100%; filter: drop-shadow(0 18px 24px rgba(0,0,0,.6)); }
-  .guitar h3 { font: italic 700 30px 'Playfair Display', Georgia, serif; margin: 0 0 4px; }
-  .guitar p { margin: 0 0 8px; color: var(--muted); }
   .tag { display: inline-block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--brass); }
 
   .amps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .amp { background: linear-gradient(180deg, #241d17, #17120e); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .amp { background: linear-gradient(180deg, #241d17, #17120e); border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px 20px; }
+  .amp img { display: block; width: 100%; border-radius: 8px; margin-bottom: 14px; box-shadow: 0 10px 24px rgba(0,0,0,.5); }
+
+  .board { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 14px;
+           padding: 26px 20px; border-radius: 14px; border: 1px solid var(--line);
+           background: repeating-linear-gradient(90deg, #1b1612 0 3px, #15110d 3px 6px); box-shadow: inset 0 0 40px rgba(0,0,0,.6); }
+  .board img { height: 170px; width: auto; border-radius: 10px; filter: drop-shadow(0 12px 14px rgba(0,0,0,.6)); }
+
+  .picker { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 26px; }
+  .picker button { font: 600 15px 'Work Sans', system-ui, sans-serif; color: var(--muted); background: var(--panel);
+                   border: 1px solid var(--line); border-radius: 999px; padding: 9px 18px; cursor: pointer; }
+  .picker button:hover { color: var(--ink); }
+  .picker button[aria-selected="true"] { background: linear-gradient(180deg, var(--brass-hi), var(--brass)); color: #241708; border-color: transparent; }
+  .showcase { text-align: center; min-height: 420px; }
+  .showcase img { width: 100%; max-width: 980px; filter: drop-shadow(0 22px 28px rgba(0,0,0,.6)); }
+  .showcase h3 { font: italic 700 34px 'Playfair Display', Georgia, serif; margin: 8px 0 2px; }
+  .showcase p { color: var(--muted); margin: 0; }
+  .showcase [hidden] { display: none; }
   .amp h3 { font: italic 700 24px 'Playfair Display', Georgia, serif; margin: 0; color: var(--ink); }
   .amp .cab { font-size: 13px; color: var(--brass); margin-bottom: 10px; }
   .amp p { margin: 0; font-size: 15px; color: var(--muted); }
@@ -107,8 +125,9 @@
   footer p { max-width: 760px; margin: 8px auto; }
 
   @media (max-width: 860px) {
-    .guitar { grid-template-columns: 1fr; text-align: center; }
     .amps { grid-template-columns: 1fr 1fr; }
+    .board img { height: 120px; }
+    .showcase { min-height: 0; }
     .two, .steps { grid-template-columns: 1fr; }
     .presets { columns: 1; }
     nav .links { display: none; }
@@ -161,16 +180,27 @@
     <h2>Five guitars</h2>
     <p class="sub">Pick a model and ContinuumTUBE reshapes the pickups of the guitar you're actually playing. Every one has switchable pickup sets and a working selector.</p>
 
-    <div class="guitar"><img src="media/guitars/signature.png" alt="Signature S illustration" loading="lazy">
-      <div><span class="tag">S-style · 5-way</span><h3>Signature S</h3><p>Sunburst, tortoise guard. Scooped, glassy and articulate.</p></div></div>
-    <div class="guitar"><img src="media/guitars/sky.png" alt="Sky S-Style illustration" loading="lazy">
-      <div><span class="tag">S-style · 5-way</span><h3>Sky S-Style</h3><p>Silver, maple neck. Round vintage mids, a softer top.</p></div></div>
-    <div class="guitar"><img src="media/guitars/blk1.png" alt="Black No. 1 S illustration" loading="lazy">
-      <div><span class="tag">S-style · 5-way</span><h3>Black No. 1 S</h3><p>Worn black relic, gold hardware. Fat, warm and thick.</p></div></div>
-    <div class="guitar"><img src="media/guitars/monterey.png" alt="Monterey S illustration" loading="lazy">
-      <div><span class="tag">S-style · 5-way</span><h3>Monterey S</h3><p>Hand-painted finish. Hotter pickups, a bright, barking attack.</p></div></div>
-    <div class="guitar"><img src="media/guitars/cherry.png" alt="Cherry '64 Semi illustration" loading="lazy">
-      <div><span class="tag">Semi-hollow · 3-way</span><h3>Cherry '64 Semi</h3><p>Twin humbuckers. Far more output, woody and round.</p></div></div>
+    <div class="picker" role="tablist" aria-label="Guitars">
+      <button role="tab" aria-selected="true" data-g="0">Signature S</button>
+      <button role="tab" aria-selected="false" data-g="1">Sky S-Style</button>
+      <button role="tab" aria-selected="false" data-g="2">Black No. 1 S</button>
+      <button role="tab" aria-selected="false" data-g="3">Monterey S</button>
+      <button role="tab" aria-selected="false" data-g="4">Cherry '64 Semi</button>
+    </div>
+    <div class="showcase">
+      <div data-panel="0"><img src="media/guitars/signature.png" alt="Signature S illustration"><span class="tag">S-style · 5-way</span><h3>Signature S</h3><p>Sunburst, tortoise guard. Scooped, glassy and articulate.</p></div>
+      <div data-panel="1" hidden><img src="media/guitars/sky.png" alt="Sky S-Style illustration" loading="lazy"><span class="tag">S-style · 5-way</span><h3>Sky S-Style</h3><p>Silver, maple neck. Round vintage mids, a softer top.</p></div>
+      <div data-panel="2" hidden><img src="media/guitars/blk1.png" alt="Black No. 1 S illustration" loading="lazy"><span class="tag">S-style · 5-way</span><h3>Black No. 1 S</h3><p>Worn black relic, gold hardware. Fat, warm and thick.</p></div>
+      <div data-panel="3" hidden><img src="media/guitars/monterey.png" alt="Monterey S illustration" loading="lazy"><span class="tag">S-style · 5-way</span><h3>Monterey S</h3><p>Hand-painted finish. Hotter pickups, a bright, barking attack.</p></div>
+      <div data-panel="4" hidden><img src="media/guitars/cherry.png" alt="Cherry '64 Semi illustration" loading="lazy"><span class="tag">Semi-hollow · 3-way</span><h3>Cherry '64 Semi</h3><p>Twin humbuckers. Far more output, woody and round.</p></div>
+    </div>
+    <script>
+      // Selettore delle chitarre: un clic mostra l'illustrazione scelta
+      document.querySelectorAll('.picker button').forEach(b => b.addEventListener('click', () => {
+        document.querySelectorAll('.picker button').forEach(x => x.setAttribute('aria-selected', x === b));
+        document.querySelectorAll('.showcase [data-panel]').forEach(p => p.hidden = p.dataset.panel !== b.dataset.g);
+      }));
+    </script>
   </div>
 </section>
 
@@ -179,14 +209,10 @@
     <h2>Four amps, four characters</h2>
     <p class="sub">Each amp has its own way of breaking up and its own cabinet — switch amp and the cab follows.</p>
     <div class="amps">
-      <div class="amp"><h3>Rock Two</h3><div class="cab">2x12</div><p>Huge, chimey clean, deep lows and forward mids. Warms up only when you push it.</p></div>
-      <div class="amp"><h3>Modern 100</h3><div class="cab">2x12</div><p>The overdrive channel: vocal mids, smooth top, long compressed sustain.</p></div>
-      <div class="amp"><h3>Junior 15</h3><div class="cab">1x12</div><p>A small combo that breaks up early — nasal, raw, light on bass.</p></div>
-      <div class="amp"><h3>Blackface Super</h3><div class="cab">4x10</div><p>Scooped mids, sparkling highs and lots of clean headroom.</p></div>
-    </div>
-    <div class="two">
-      <figure class="shot" style="margin:0"><img src="media/shots/rig-crossroads.png" alt="Semi-hollow into the Modern 100" loading="lazy"><figcaption>Semi-hollow into the Modern 100.</figcaption></figure>
-      <figure class="shot" style="margin:0"><img src="media/shots/rig-monterey.png" alt="Monterey S into the Blackface Super" loading="lazy"><figcaption>Monterey S into the Blackface Super.</figcaption></figure>
+      <div class="amp"><img src="media/amps/rock-two.png" alt="Rock Two amp faceplate" loading="lazy"><h3>Rock Two</h3><div class="cab">2x12 cabinet</div><p>Huge, chimey clean, deep lows and forward mids. Warms up only when you push it.</p></div>
+      <div class="amp"><img src="media/amps/modern-100.png" alt="Modern 100 amp faceplate" loading="lazy"><h3>Modern 100</h3><div class="cab">2x12 cabinet</div><p>The overdrive channel: vocal mids, smooth top, long compressed sustain.</p></div>
+      <div class="amp"><img src="media/amps/junior-15.png" alt="Junior 15 amp faceplate" loading="lazy"><h3>Junior 15</h3><div class="cab">1x12 cabinet</div><p>A small combo that breaks up early: nasal, raw, light on bass.</p></div>
+      <div class="amp"><img src="media/amps/blackface-super.png" alt="Blackface Super amp faceplate" loading="lazy"><h3>Blackface Super</h3><div class="cab">4x10 cabinet</div><p>Scooped mids, sparkling highs and lots of clean headroom.</p></div>
     </div>
   </div>
 </section>
@@ -195,11 +221,22 @@
   <div class="wrap">
     <h2>Twenty-one pedals</h2>
     <p class="sub">Six slots before the amp, four in the FX loop after the cabinet. Every pedal has its own face, knobs and footswitch.</p>
+    <div class="board">
+      <img src="media/pedals/studio-comp.png" alt="Studio Comp" loading="lazy">
+      <img src="media/pedals/centaur-drive.png" alt="Centaur Drive" loading="lazy">
+      <img src="media/pedals/green-screamer.png" alt="Green Screamer" loading="lazy">
+      <img src="media/pedals/blue-boost.png" alt="Blue Boost" loading="lazy">
+      <img src="media/pedals/rotary-vibe.png" alt="Rotary Vibe" loading="lazy">
+      <img src="media/pedals/vintage-chorus.png" alt="Vintage Chorus" loading="lazy">
+      <img src="media/pedals/aqua-delay.png" alt="Aqua Delay" loading="lazy">
+      <img src="media/pedals/tape-echo.png" alt="Tape Echo" loading="lazy">
+      <img src="media/pedals/spring-reverb.png" alt="Spring Reverb" loading="lazy">
+      <img src="media/pedals/stone-verb.png" alt="Stone Verb" loading="lazy">
+    </div>
+    <p class="sub" style="margin:26px auto 0">…and eleven more:</p>
     <div class="pedals">
-      <span>Green Screamer</span><span>Centaur Drive</span><span>Crown Drive</span><span>Twin Drive</span><span>Breaker Drive</span><span>Rhino Drive</span>
-      <span>Blues Drive K</span><span>Blue Boost</span><span>Pickle Fuzz</span><span>Studio Comp</span><span>XW Wah</span><span>Envelope Q</span>
-      <span>Sub Octave</span><span>Rotary Vibe</span><span>Script Phaser</span><span>Vintage Chorus</span><span>Opto Tremolo</span>
-      <span>Aqua Delay</span><span>Tape Echo</span><span>Spring Reverb</span><span>Stone Verb</span>
+      <span>Crown Drive</span><span>Twin Drive</span><span>Breaker Drive</span><span>Rhino Drive</span><span>Blues Drive K</span>
+      <span>Pickle Fuzz</span><span>XW Wah</span><span>Envelope Q</span><span>Sub Octave</span><span>Script Phaser</span><span>Opto Tremolo</span>
     </div>
   </div>
 </section>
