@@ -5,7 +5,7 @@
 <h1 align="center">ContinuumTUBE</h1>
 
 <p align="center">
-  <b>A boutique guitar rig for Windows — five guitars, four tube amps, twenty-one pedals.</b><br>
+  <b>A John Mayer Fan guitar rig for Windows — five guitars, four tube amps, twenty-one pedals.</b><br>
   VST3 plugin + standalone app · free to use
 </p>
 
