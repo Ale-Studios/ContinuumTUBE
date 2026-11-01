@@ -64,7 +64,7 @@ vibe, phaser, chorus, tremolo, analog and tape delay, spring and studio reverb.
 
 ## Download & install
 
-1. Download **`ContinuumTUBE-1.0.0-Windows.zip`** from [Releases](../../releases/latest) and unzip it.
+1. Download **`ContinuumTUBE-1.0.1-Windows.zip`** from [Releases](../../releases/latest) and unzip it.
 2. **Standalone:** run `ContinuumTUBE.exe`, open **Options → Audio/MIDI Settings**, choose your
    audio interface's input and output.
 3. **Plugin:** copy the `ContinuumTUBE.vst3` folder into `C:\Program Files\Common Files\VST3`,

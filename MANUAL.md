@@ -26,10 +26,10 @@ The window can be resized or maximised: everything scales.
 
 | Model | Pickup sets | Selector |
 |---|---|---|
-| Signature S | Big Dipper · Texas Special · 635JM · Masterdesign '62 | 5-way |
-| Sky S-Style | 635JM · Big Dipper · Texas Special · Masterdesign '62 | 5-way |
-| Black No. 1 S | Big Dipper · Texas Special · 635JM · Masterdesign '62 | 5-way |
-| Monterey S | Monterey stock · Big Dipper · Texas Special · 635JM | 5-way |
+| Signature S | Glass Scoop · Hot Fifties · Round Vintage · Early '60s | 5-way |
+| Sky S-Style | Round Vintage · Glass Scoop · Hot Fifties · Early '60s | 5-way |
+| Black No. 1 S | Glass Scoop · Hot Fifties · Round Vintage · Early '60s | 5-way |
+| Monterey S | Monterey stock · Glass Scoop · Hot Fifties · Round Vintage | 5-way |
 | Cherry '64 Semi | Vintage humbuckers | 3-way |
 
 ## Amps
