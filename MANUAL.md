@@ -10,6 +10,7 @@
 | **Amp** | Gain, bass, middle, treble, master, presence. Changing amp also loads that amp's own cabinet. |
 | **Cabinet** | Choose another cabinet, or **Off** if you use your own impulse responses after the plugin. |
 | **FX loop** (bottom) | Four slots after the cabinet, for delays, reverbs and modulation. |
+| **Stack Looper** | Four-track looper at the very end of the chain: it records everything you hear. See [Stack Looper](#stack-looper). |
 | **Output** | Final volume. Keep the **OUT** meter out of the red. |
 | **Preset / Save preset** | Factory presets and your own. Saved presets go to `Documents\ContinuumTUBE Presets`. |
 
@@ -66,26 +67,48 @@ The window can be resized or maximised: everything scales.
 | Tape Echo | tape delay | Time · Repeats · Mix |
 | Spring Reverb | spring reverb | Decay · Tone · Mix |
 | Stone Verb | studio reverb | Decay · Tone · Mix |
+| Hall Reverb | large hall with pre-delay | Decay · Tone · Mix |
 
 ## Presets
 
-| Preset | Guitar | Amp | In short |
-|---|---|---|---|
-| Gravity Butter Lead | Black No. 1 S, neck | Rock Two | the smooth, singing lead: two light overdrives, tape echo |
-| Slow Dancing Room | Black No. 1 S, pos. 2 | Rock Two | warm clean with a touch of drive |
-| Heart of Life Clean | Black No. 1 S, pos. 2 | Rock Two | soft, compressed fingerpicking clean |
-| Edge of Desire Ambient | Black No. 1 S, neck | Rock Two | long echoes and reverb |
-| Waiting World Clean | Signature S, pos. 4 | Rock Two | funky in-between clean |
-| Belief Groove | Signature S, pos. 2 | Rock Two | rhythm clean with slapback |
-| Vultures Quack | Signature S, pos. 4 | Rock Two | quacky, boosted rhythm |
-| Covered Rain Blues | Black No. 1 S, neck | Blackface Super | slow blues, pushed hard |
-| Bold Love Monterey | Monterey S, neck | Blackface Super | vibe + drive, 60s style |
-| Wild Blue Sky | Sky S-Style, pos. 4 | Modern 100 | clean, glassy, 80s-tinged |
-| Last Train Chorus | Sky S-Style, pos. 2 | Modern 100 | chorus and echo |
-| Shouldn't Matter Lead | Sky S-Style, neck | Modern 100 | overdrive-channel lead |
-| Crossroads Shuffle 335 | Cherry '64 Semi, bridge | Modern 100 | humbucker shuffle |
-| No Such Thing Junior | Signature S, pos. 4 | Junior 15 | early-years small-combo clean |
-| Why Georgia Junior | Signature S, pos. 2 | Junior 15 | compressed small-combo clean |
+| Preset | Guitar | Amp | Drive | In short |
+|---|---|---|---|---|
+| Gravity Butter Lead | Black No. 1 S, neck | Rock Two | crunch | the smooth, singing lead: a transparent drive into a light mid-hump drive, tape echo |
+| Slow Dancing Room | Black No. 1 S, pos. 2 | Rock Two | edge of breakup | clean that only breaks up when you dig in |
+| Heart of Life Clean | Black No. 1 S, pos. 2 | Rock Two | clean | soft, compressed fingerpicking clean |
+| Edge of Desire Ambient | Black No. 1 S, neck | Rock Two | clean | long echo into the Hall Reverb |
+| Waiting World Clean | Signature S, pos. 4 | Blackface Super | clean | bright, funky in-between clean |
+| Belief Groove | Signature S, pos. 2 | Rock Two | edge of breakup | rhythm with a touch of drive and slapback |
+| Vultures Quack | Signature S, pos. 4 | Junior 15 | edge of breakup | quacky trio rhythm: a small combo nudged by a boost |
+| Covered Rain Blues | Black No. 1 S, neck | Blackface Super | lead | slow blues: mid-hump drive into a cranked amp |
+| Bold Love Monterey | Monterey S, neck | Blackface Super | crunch | vibe + amp-like drive, 60s style |
+| Wild Blue Sky | Sky S-Style, pos. 4 | Modern 100 | clean | clean, glassy, 80s-tinged |
+| Last Train Chorus | Sky S-Style, pos. 2 | Modern 100 | crunch | warm chorus and echo |
+| Shouldn't Matter Lead | Sky S-Style, neck | Modern 100 | crunch | soft lead with a dynamic overdrive |
+| Crossroads Shuffle 335 | Cherry '64 Semi, bridge | Modern 100 | lead | humbucker shuffle on the amp's own drive, no pedals |
+| No Such Thing Junior | Signature S, pos. 4 | Junior 15 | clean | early-years small-combo clean |
+| Why Georgia Junior | Signature S, pos. 2 | Junior 15 | clean | compressed small-combo clean |
+
+Presets are level-matched: switching between a clean and a lead preset keeps a similar volume.
+Loading a preset doesn't touch the looper.
+
+## Stack Looper
+
+The looper sits after the FX loop and the output volume, so it records exactly what you hear:
+every pedal, the amp and the cabinet.
+
+| Control | What it does |
+|---|---|
+| **REC / PLAY** footswitch | First press arms the first loop: with **AUTO** up, recording starts on your first note. Second press closes the loop, which plays at once. Each further press records a new layer on the next free track; a layer closes by itself after one loop. |
+| **1 – 4** track pads | Click: mute / unmute that track (or record on it, if empty). Hold: clear that track. Ring colour: amber armed, red recording, green playing. |
+| **STOP** | Stops all loops; press again to restart from the top. |
+| **CLEAR** | Erases every track. |
+| **LOOP** | Volume of the loops against your live playing. |
+| **TONE** | Left darkens the loops, right thins them out, so they sit behind your playing. |
+| **AUTO** | How easily your first note starts the recording. All the way left: recording starts as soon as you press. |
+
+Loops keep playing when you change preset: loop a clean rhythm, switch to a lead preset and play
+over it. Each track holds up to 60 seconds (30 seconds above 50 kHz).
 
 ## Standalone audio settings
 

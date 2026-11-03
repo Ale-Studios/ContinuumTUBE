@@ -5,7 +5,7 @@
 <h1 align="center">ContinuumTUBE</h1>
 
 <p align="center">
-  <b>A John Mayer Fan guitar rig for Windows — five guitars, four tube amps, twenty-one pedals.</b><br>
+  <b>A John Mayer Fan guitar rig for Windows — five guitars, four tube amps, twenty-two pedals and a looper.</b><br>
   VST3 plugin + standalone app · free to use
 </p>
 
@@ -21,7 +21,7 @@
 ContinuumTUBE is a complete signal chain in one window:
 
 ```
-your guitar  →  guitar model  →  6 pedal slots  →  amp  →  cabinet  →  4 FX-loop slots  →  out
+your guitar  →  guitar model  →  6 pedal slots  →  amp  →  cabinet  →  4 FX-loop slots  →  looper  →  out
 ```
 
 Plug a guitar into your audio interface, pick a preset, play. Or build your own rig by dragging
@@ -50,10 +50,16 @@ Pick the model and ContinuumTUBE reshapes the pickup response of the guitar you'
 | **Blackface Super** · 4x10 | scooped, sparkling, lots of headroom |
 
 **Pedals & effects** — overdrives, a fuzz, boost, compressor, wah, envelope filter, octave,
-vibe, phaser, chorus, tremolo, analog and tape delay, spring and studio reverb.
+vibe, phaser, chorus, tremolo, analog and tape delay, spring, studio and hall reverb.
 
-**15 song-inspired presets** — from *Gravity Butter Lead* and *Slow Dancing Room* to
-*Wild Blue Sky* and *Crossroads Shuffle 335*. Full list in the [manual](MANUAL.md#presets).
+**Stack Looper** — a four-track looper at the end of the chain. Hit the footswitch and it starts
+recording on your first note, with every effect you're using; layer up to four tracks, mute or
+clear each one. Loops keep playing when you change preset, so you can loop a clean rhythm and
+solo over it with a lead sound.
+
+**15 song-inspired presets** — mostly clean or just breaking up, like the songs, with a few
+crunch and lead sounds that each use a different kind of drive. All set to a similar volume.
+Full list in the [manual](MANUAL.md#presets).
 
 <table>
 <tr>
@@ -64,7 +70,7 @@ vibe, phaser, chorus, tremolo, analog and tape delay, spring and studio reverb.
 
 ## Download & install
 
-1. Download **`ContinuumTUBE-1.0.1-Windows.zip`** from [Releases](../../releases/latest) and unzip it.
+1. Download **`ContinuumTUBE-1.1.0-Windows.zip`** from [Releases](../../releases/latest) and unzip it.
 2. **Standalone:** run `ContinuumTUBE.exe`, open **Options → Audio/MIDI Settings**, choose your
    audio interface's input and output.
 3. **Plugin:** copy the `ContinuumTUBE.vst3` folder into `C:\Program Files\Common Files\VST3`,
