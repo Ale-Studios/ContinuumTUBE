@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://alex-stark-industries.github.io/ContinuumTUBE/"><b>Website & video</b></a> ·
+  <a href="https://ale-studios.github.io/ContinuumTUBE/"><b>Website & video</b></a> ·
   <a href="../../releases/latest"><b>Download</b></a> ·
   <a href="MANUAL.md">Manual</a> ·
   <a href="LICENSE.md">License</a>
