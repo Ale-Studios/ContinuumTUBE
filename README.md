@@ -5,7 +5,7 @@
 <h1 align="center">ContinuumTUBE</h1>
 
 <p align="center">
-  <b>A John Mayer Fan guitar rig for Windows — five guitars, four tube amps, twenty-two pedals and a looper.</b><br>
+  <b>A John Mayer Fan guitar rig for Windows — five guitars, four tube amps, twenty-five pedals, a looper and a tuner.</b><br>
   VST3 plugin + standalone app · free to use
 </p>
 
@@ -50,31 +50,41 @@ Pick the model and ContinuumTUBE reshapes the pickup response of the guitar you'
 | **Blackface Super** · 4x10 | scooped, sparkling, lots of headroom |
 
 **Pedals & effects** — overdrives, a fuzz, boost, compressor, wah, envelope filter, octave,
-vibe, phaser, chorus, tremolo, analog and tape delay, spring, studio and hall reverb.
+vibe, phaser, chorus, tremolo, analog and tape delay, spring, studio and hall reverb, a noise gate,
+an auto volume swell and a shimmer reverb whose tail rises an octave.
 
 **Stack Looper** — a four-track looper at the end of the chain. Hit the footswitch and it starts
 recording on your first note, with every effect you're using; layer up to four tracks, mute or
 clear each one. Loops keep playing when you change preset, so you can loop a clean rhythm and
 solo over it with a lead sound.
 
-**15 song-inspired presets** — mostly clean or just breaking up, like the songs, with a few
-crunch and lead sounds that each use a different kind of drive. All set to a similar volume.
-Full list in the [manual](MANUAL.md#presets).
+**Tuner** — click **TUNER** in the header: chromatic, accurate to about a cent, and it can mute
+the output while you tune.
+
+**16 presets** — fifteen song-inspired sounds, mostly clean or just breaking up, like the songs,
+with a few crunch and lead sounds that each use a different kind of drive; plus
+**Ethereal Reverb**, where every note swells in from silence and hangs in a huge shimmering space.
+All set to a similar volume. Full list in the [manual](MANUAL.md#presets).
 
 <table>
 <tr>
 <td width="50%"><img src="media/shots/guitar-view.png" alt="Large guitar view with pickup and selector buttons"><br><sub>Click a guitar for the large view: pickups and selector, up close.</sub></td>
-<td width="50%"><img src="media/shots/rig-crossroads.png" alt="Semi-hollow guitar into the Modern 100"><br><sub>The semi-hollow into the Modern 100 overdrive channel.</sub></td>
+<td width="50%"><img src="media/shots/tuner.png" alt="The built-in tuner"><br><sub>The built-in tuner, one click away.</sub></td>
 </tr>
 </table>
 
 ## Download & install
 
-1. Download **`ContinuumTUBE-1.1.0-Windows.zip`** from [Releases](../../releases/latest) and unzip it.
-2. **Standalone:** run `ContinuumTUBE.exe`, open **Options → Audio/MIDI Settings**, choose your
+1. Download **`ContinuumTUBE-1.2.0-Setup.exe`** from [Releases](../../releases/latest) and run it.
+   It installs the standalone app (with Start menu and optional desktop shortcut) and the VST3
+   plugin in the standard VST3 folder. Uninstall it from Windows Settings like any other app.
+2. **Standalone:** open ContinuumTUBE, then **Options → Audio/MIDI Settings** and choose your
    audio interface's input and output.
-3. **Plugin:** copy the `ContinuumTUBE.vst3` folder into `C:\Program Files\Common Files\VST3`,
-   then rescan plugins in your DAW.
+3. **Plugin:** rescan plugins in your DAW.
+
+Prefer no installer? Download **`ContinuumTUBE-1.2.0-Windows.zip`** instead, unzip it, run
+`ContinuumTUBE.exe`, and copy the `ContinuumTUBE.vst3` folder into
+`C:\Program Files\Common Files\VST3`.
 
 > Windows may show *"Windows protected your PC"* the first time, because the app isn't code-signed.
 > Click **More info → Run anyway**.

@@ -12,6 +12,7 @@
 | **FX loop** (bottom) | Four slots after the cabinet, for delays, reverbs and modulation. |
 | **Stack Looper** | Four-track looper at the very end of the chain: it records everything you hear. See [Stack Looper](#stack-looper). |
 | **Output** | Final volume. Keep the **OUT** meter out of the red. |
+| **Tuner** | The **TUNER** button in the header. See [Tuner](#tuner). |
 | **Preset / Save preset** | Factory presets and your own. Saved presets go to `Documents\ContinuumTUBE Presets`. |
 
 The window can be resized or maximised: everything scales.
@@ -68,13 +69,31 @@ The window can be resized or maximised: everything scales.
 | Spring Reverb | spring reverb | Decay · Tone · Mix |
 | Stone Verb | studio reverb | Decay · Tone · Mix |
 | Hall Reverb | large hall with pre-delay | Decay · Tone · Mix |
+| Noise Gate | silences hiss and hum between notes | Thresh · Release · Range |
+| Auto Swell | every note fades in from silence, like a volume pedal | Sens · Attack · Level |
+| Shimmer Verb | huge reverb whose tail rises an octave | Decay · Shimmer · Mix |
+
+**Noise Gate** works best first on the pedalboard, or right after your drives. **THRESH** sets
+how quiet the signal must get before it closes, **RELEASE** how gently it closes, **RANGE** how
+far down it goes.
+
+**Auto Swell** restarts from silence on each new note played after a pause. **SENS** sets how
+hard you must play for it to trigger, **ATTACK** how long the fade-in takes (from an instant to
+two seconds), **LEVEL** the final volume. Legato notes are not swelled one by one; raise **SENS**
+if you want them to be.
+
+**Shimmer Verb** feeds its own tail through an octave-up shifter. **DECAY** sets the size of the
+space, **SHIMMER** how much octave-up comes back in, **MIX** how much reverb you hear.
+
+A pedal can be loaded switched off: some presets keep a drive on the board, off, for you to
+stomp on for the solo.
 
 ## Presets
 
 | Preset | Guitar | Amp | Drive | In short |
 |---|---|---|---|---|
-| Gravity Butter Lead | Black No. 1 S, neck | Rock Two | crunch | the smooth, singing lead: a transparent drive into a light mid-hump drive, tape echo |
-| Slow Dancing Room | Black No. 1 S, pos. 2 | Rock Two | edge of breakup | clean that only breaks up when you dig in |
+| Gravity Butter Lead | Black No. 1 S, neck | Rock Two | crunch | the live-era singing lead: a clean boost into a low-gain, loud mid-hump drive, analog delay and spring |
+| Slow Dancing Room | Black No. 1 S, pos. 2 | Rock Two | edge of breakup | live-era riff: a clean boost just pushing the amp, slapback and spring; the Green Screamer is on the board, off, for the solo |
 | Heart of Life Clean | Black No. 1 S, pos. 2 | Rock Two | clean | soft, compressed fingerpicking clean |
 | Edge of Desire Ambient | Black No. 1 S, neck | Rock Two | clean | long echo into the Hall Reverb |
 | Waiting World Clean | Signature S, pos. 4 | Blackface Super | clean | bright, funky in-between clean |
@@ -88,6 +107,7 @@ The window can be resized or maximised: everything scales.
 | Crossroads Shuffle 335 | Cherry '64 Semi, bridge | Modern 100 | lead | humbucker shuffle on the amp's own drive, no pedals |
 | No Such Thing Junior | Signature S, pos. 4 | Junior 15 | clean | early-years small-combo clean |
 | Why Georgia Junior | Signature S, pos. 2 | Junior 15 | clean | compressed small-combo clean |
+| Ethereal Reverb | Sky S-Style, pos. 4 | Blackface Super | clean | each note swells in from silence, then hangs for about ten seconds in echo, shimmer and two halls |
 
 Presets are level-matched: switching between a clean and a lead preset keeps a similar volume.
 Loading a preset doesn't touch the looper.
@@ -110,6 +130,19 @@ every pedal, the amp and the cabinet.
 Loops keep playing when you change preset: loop a clean rhythm, switch to a lead preset and play
 over it. Each track holds up to 60 seconds (30 seconds above 50 kHz).
 
+## Tuner
+
+Click **TUNER** in the header and play a single open string.
+
+- The big letter is the nearest note; the LED scale shows how far off it is, from −50 to +50 cents.
+  The green centre LED lights when you are in tune.
+- The arrows tell you which way to turn the peg.
+- **E2 – E4** shows the six strings of standard tuning; the one you are playing lights up.
+- **Mute output while tuning** silences the rig while the tuner is open (on by default).
+- Reference: A4 = 440 Hz.
+
+Close it with **x** or the Esc key.
+
 ## Standalone audio settings
 
 **Options → Audio/MIDI Settings**: choose the device type, then your interface's input and output.
@@ -124,6 +157,7 @@ over it. Each track holds up to 60 seconds (30 seconds above 50 kHz).
 | Problem | Fix |
 |---|---|
 | No sound in the standalone app | Check input/output in Audio/MIDI Settings and that the input isn't muted. |
-| The plugin doesn't appear in the DAW | Make sure the whole `ContinuumTUBE.vst3` folder is in `C:\Program Files\Common Files\VST3`, then rescan. |
+| The plugin doesn't appear in the DAW | Rescan plugins. If you used the zip, make sure the whole `ContinuumTUBE.vst3` folder is in `C:\Program Files\Common Files\VST3`. If you installed for your user only, add `%LOCALAPPDATA%\Programs\Common\VST3` to your DAW's plugin folders. |
+| No sound with the tuner open | Untick **Mute output while tuning**, or close the tuner. |
 | Crackles | Raise the buffer size. |
 | Too much distortion | Lower the interface's input gain or the amp's Gain. |
